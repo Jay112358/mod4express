@@ -12,18 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 3000;
 
 app.get("/status", (req, res) => {
-  res.send(system.getenv(ENV_NAME));
-  res.send(system.getenv(PORT));
+  res.send(getenv(ENV_NAME));
+  res.send(getenv(PORT));
 });
+
 app.get("/hello", (req, res) => {
   res.send("Hello World");
 });
-// app.get("/residential", (req, res) => {
-//   residential;
-// });
 
-// below const entries for residential quote calc
-app.get("/residential", (req, res) => elevators.residential(req,res));
+app.get("/calc-residential", (req, res) => elevators.residential(req,res));
 
 app.get("/error", (req, res) => {
   res.status(500).send("Error");
@@ -36,17 +33,7 @@ app.get("/email-list", (req, res) => {
     res.send(emails)
 });
 
-app.get("/region-avg", (req, res) => {
-  console.log("region-avg");
-});
-
-app.get("/calc-residential", (req, res) => {
-  console.log(calc - residential);
-});
-
-
-
-app.get("/agents", (req, res) => {
+app.get("/regionavg", (req, res) => {
   const region = "north";
   //replace above line with commented code line below for actual functionality of accepting a vatiable for region
   // const region = req.query.region.toLowerCase;

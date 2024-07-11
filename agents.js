@@ -14,5 +14,5 @@ const agents = [
     {"first_name":"Zach","last_name":"Van Den Zilch","email":"zach@rocket.elv","region":"north","rating":"70","fee":"6000"},
     {"first_name":"Al","last_name":"Stein","email":"relative@rocket.elv","region":"south","rating":"54","fee":"4000"}
   ]
-  module.exports = agents;
+  module.exports = {agents};
 
